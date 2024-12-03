@@ -86,6 +86,7 @@ header {
     justify-content: center;
     max-width: 150px;
     height: auto;
+    margin-right: 10px;
 }
 
 header .container{
@@ -99,20 +100,21 @@ header .container{
 header nav{
     display: flex;
     flex-direction: row;
-    gap: 10px;
-    justify-content: flex-end;
+    gap: 3px;
+    justify-content: flex-start;
     width: 100%;
     flex-wrap: nowrap;
 }
 
 
 header a {
-    padding: 5px;
+    padding: 4px;
     text-decoration: none;
     font-weight: bold;
     color: black;
-    font-size: 16px;
-    white-space: nowrap;
+    font-size: 13px;
+    white-space: normal;
+    word-wrap: break-word;
 }
 
 header a:hover {
@@ -172,7 +174,8 @@ padding: 10%;
     text-align: center;
     color: white;
     background-color: rgb(30, 30, 30);
-    height: 100vh; /* Ocupa toda la pantalla */
+    min-height: 100vh; /* se adapta */
+    margin-bottom: 20px;
 }
 
 #nuestros-servicios .container {
@@ -201,6 +204,8 @@ padding: 10%;
     flex: 1 1 calc(33.333% - 40px);
     max-width: 300px;
     color: white;
+    width: 30%;  /* Asegura que las cartas no ocupen más del espacio disponible */
+    min-width: 280px; /* Asegura un tamaño mínimo */
 }
 
 #nuestros-servicios .servicios {
@@ -238,6 +243,7 @@ padding: 10%;
     rgba(0, 0, 0, 0.5)
     ) 
     ,url("media/web-developer.jpg");
+    margin-bottom: 0;
 }
 
 
@@ -292,19 +298,20 @@ footer .container{
 }
 
 
-@media (min-width: 720px){
+@media (min-width: 480px){
     header{
         position: fixed;
         width: 100%;
     }
     
-    
+
     header .container{
         flex-direction: row;
         justify-content: space-between;
     }
 
-header nav{
+    header nav{
+    justify-content: flex-end;
     flex-direction: row;
     padding-bottom: 0;
     padding-right: 15px;
@@ -392,10 +399,4 @@ header nav{
     width: 30%;  /* Cada carta ocupará el 30% del contenedor en pantallas grandes */
     min-width: 280px; /* Asegura que las cartas no se vuelvan demasiado pequeñas */
     box-sizing: border-box;  /* Asegura que el padding y margen se incluyan en el tamaño total */
-}
-
-@media (max-width: 768px) {
-    header a {
-        font-size: 14px; /* Reduce el tamaño de la fuente en pantallas más pequeñas */
-    }
 }
